@@ -1,16 +1,11 @@
 const ftoc = function(temp) {
-  celsiusTemp = (temp - 32) * .556;
-  return roundedToFixed(celsiusTemp, 1);
+  let celsius = Math.round((temp - 32) * (5/9) * 10) / 10;
+  return celsius;
 }
 
 const ctof = function(temp) {
-    fahrenheitTemp = (temp * 1.8) + 32;
-    return roundedToFixed(fahrenheitTemp, 1);
-}
-
-function roundedToFixed(decimal, precision) {
-  let multiplier = Math.pow(10, precision || 0);
-  return (Math.round(decimal * multiplier) / multiplier);
+    let fahrenheit = Math.round((temp * (9/5) + 32) * 10) / 10;
+    return fahrenheit;
 }
 
 module.exports = {
